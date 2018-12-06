@@ -44,7 +44,7 @@ public class FocusSquare: FocusNode {
 	static var fillColor = #colorLiteral(red: 1, green: 0.9254901961, blue: 0.4117647059, alpha: 1)
 
 	/// Indicates whether the segments of the focus square are disconnected.
-	private var isOpen = false
+	private var isOpen = true
 
 	/// List of the segments in the focus square.
 	private var segments: [FocusSquare.Segment] = []
@@ -89,6 +89,7 @@ public class FocusSquare: FocusNode {
 
 		for segment in segments {
 			self.positioningNode.addChildNode(segment)
+			segment.open()
 		}
 		self.positioningNode.addChildNode(fillPlane)
 		self.positioningNode.simdScale = float3(FocusSquare.size * FocusSquare.scaleForClosedSquare)
@@ -113,7 +114,10 @@ public class FocusSquare: FocusNode {
 
 	public func offPlaneAniation() {
 		// Open animation
-		guard !isOpen else { return }
+		guard !isOpen else {
+			isAnimating = false
+			return
+		}
 		isOpen = true
 		SCNTransaction.begin()
 		SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
@@ -137,7 +141,10 @@ public class FocusSquare: FocusNode {
 	}
 
 	public func onPlaneAnimation(newPlane: Bool = false) {
-		guard isOpen else { return }
+		guard isOpen else {
+			isAnimating = false
+			return
+		}
 		isOpen = false
 		positioningNode.removeAction(forKey: "pulse")
 		positioningNode.opacity = 1.0
@@ -154,7 +161,9 @@ public class FocusSquare: FocusNode {
 			for segment in self.segments {
 				segment.close()
 			}
-			SCNTransaction.completionBlock = { self.isAnimating = false }
+			SCNTransaction.completionBlock = {
+				self.isAnimating = false
+			}
 			SCNTransaction.commit()
 		}
 		SCNTransaction.commit()
