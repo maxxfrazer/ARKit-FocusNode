@@ -95,7 +95,6 @@
 				654AA3446A162FEA29536DB2 /* Pods-FocusNode.debug.xcconfig */,
 				663C8E0B7FF260B44B10D8B6 /* Pods-FocusNode.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

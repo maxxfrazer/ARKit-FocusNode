@@ -94,6 +94,14 @@ open class FocusNode: SCNNode {
 	/// The primary node that controls the position of other `FocusSquare` nodes.
 	public let positioningNode = SCNNode()
 
+	public var scaleNodeBasedOnDistance = true {
+		didSet {
+			if self.scaleNodeBasedOnDistance == false {
+				self.simdScale = float3([1, 1, 1])
+			}
+		}
+	}
+
 	// MARK: - Initialization
 
 	public override init() {
@@ -169,7 +177,9 @@ open class FocusNode: SCNNode {
 		// Move to average of recent positions to avoid jitter.
 		let average = recentFocusNodePositions.reduce(float3(0), { $0 + $1 }) / Float(recentFocusNodePositions.count)
 		self.simdPosition = average
-		self.simdScale = float3(scaleBasedOnDistance(camera: camera))
+		if self.scaleNodeBasedOnDistance {
+			self.simdScale = float3(scaleBasedOnDistance(camera: camera))
+		}
 
 		// Correct y rotation of camera square.
 		guard let camera = camera else { return }
@@ -204,8 +214,8 @@ open class FocusNode: SCNNode {
 		}
 
 		var shouldAnimateAlignmentChange = false
-
-		var simdRot = simd_quatf(vector: float4(0, 1, 0, angle))
+		let tempNode = SCNNode()
+		tempNode.simdRotation = float4(0, 1, 0, angle)
 
 		// Determine current alignment
 		var alignment: ARPlaneAnchor.Alignment?
@@ -244,15 +254,15 @@ open class FocusNode: SCNNode {
 		}
 
 		if alignment == .vertical {
-			simdRot = hitTestResult.worldTransform.orientation
+			tempNode.simdOrientation = hitTestResult.worldTransform.orientation
 			shouldAnimateAlignmentChange = true
 		}
 
 		// Change the focus square's alignment
 		if shouldAnimateAlignmentChange {
-			self.performAlignmentAnimation(to: simdRot)
+			performAlignmentAnimation(to: tempNode.simdOrientation)
 		} else {
-			simdOrientation = simdRot
+			simdOrientation = tempNode.simdOrientation
 		}
 	}
 
@@ -313,7 +323,7 @@ open class FocusNode: SCNNode {
 		SCNTransaction.completionBlock = {
 			self.isChangingAlignment = false
 		}
-		SCNTransaction.animationDuration = 0.5
+		SCNTransaction.animationDuration = 0.3
 		SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 		simdOrientation = newOrientation
 		SCNTransaction.commit()
