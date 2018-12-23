@@ -8,6 +8,6 @@ target 'FocusNode' do
   use_frameworks!
 
   # Pods for FocusNode
-  # pod 'SmartHitTest'
-  pod 'SmartHitTest', :path => '../SmartHitTest'
+  pod 'SmartHitTest'
+  # pod 'SmartHitTest', :path => '../SmartHitTest'
 end
