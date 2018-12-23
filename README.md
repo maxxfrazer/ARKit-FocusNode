@@ -6,3 +6,9 @@ https://developer.apple.com/documentation/arkit/handling_3d_interaction_and_ui_c
 I've added the license from that project to this repository.
 
 I DID NOT WRITE A MAJORITY OF THIS CODE MYSELF, MOST OF IT WAS TAKEN DIRECTLY FROM APPLE'S EXAMPLES
+
+Includ this pod in your Podfile like so:
+
+```
+pod 'FocusNode'
+```
