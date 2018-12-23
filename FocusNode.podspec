@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "FocusNode"
-  s.version      = "1.0.1"
+  s.version      = "1.1.1"
   s.summary      = "FocusNode creates a node on the ground or wall to show where the centre of the screen hits the active scene."
   s.description  = <<-DESC
   					FocusNode allows users to get a pretty good estimate of a hitTest on vertical or horizontal planes,
