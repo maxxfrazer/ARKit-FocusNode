@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
 		sceneView.frame = self.view.bounds
 		self.view.addSubview(sceneView)
+		self.sceneView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
 		sceneView.delegate = self
 		sceneView.showsStatistics = true

@@ -9,7 +9,6 @@
 import ARKit
 import SmartHitTest
 
-
 private extension UIView {
 	/// Center of the view
 	var screenCenter: CGPoint {
@@ -175,10 +174,10 @@ open class FocusNode: SCNNode {
 		recentFocusNodePositions = Array(recentFocusNodePositions.suffix(10))
 
 		// Move to average of recent positions to avoid jitter.
-		let average = recentFocusNodePositions.reduce(float3(0), { $0 + $1 }) / Float(recentFocusNodePositions.count)
+		let average = recentFocusNodePositions.reduce(float3(repeating: 0), { $0 + $1 }) / Float(recentFocusNodePositions.count)
 		self.simdPosition = average
 		if self.scaleNodeBasedOnDistance {
-			self.simdScale = float3(scaleBasedOnDistance(camera: camera))
+			self.simdScale = float3(repeating: scaleBasedOnDistance(camera: camera))
 		}
 
 		// Correct y rotation of camera square.

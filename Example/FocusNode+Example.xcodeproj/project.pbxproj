@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -122,6 +122,7 @@
 				TargetAttributes = {
 					00A3A7C221CFF9BC002A7CF6 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -184,18 +185,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FocusNode/FocusNode.framework",
-				"${BUILT_PRODUCTS_DIR}/SmartHitTest/SmartHitTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FocusNode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmartHitTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -351,7 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2RTJDRM64;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "FocusNode+Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,7 +353,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxxfrazer.FocusNode-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -370,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2RTJDRM64;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "FocusNode+Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,7 +372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxxfrazer.FocusNode-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
