@@ -14,8 +14,6 @@ https://developer.apple.com/documentation/arkit/handling_3d_interaction_and_ui_c
 
 I've added the license from that project to this repository.
 
-I DID NOT WRITE A MAJORITY OF THIS CODE MYSELF, MOST OF IT WAS TAKEN DIRECTLY FROM APPLE'S EXAMPLES
-
 Include this pod in your Podfile like so:
 
 ```
@@ -34,3 +32,9 @@ Check out the Example project or message me on GitHub or twitter if it's unclear
 
 
 The Example project looks like this:
+
+![FocusNode Example 1](https://github.com/maxxfrazer/ARKit-FocusNode/blob/master/media/FocusNode-Example1.gif)
+
+
+
+I DID NOT WRITE A MAJORITY OF THIS CODE MYSELF, MOST OF IT WAS TAKEN DIRECTLY FROM APPLE'S EXAMPLES
