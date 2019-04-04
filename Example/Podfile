@@ -5,5 +5,5 @@ platform :ios, '12.0'
 target 'FocusNode+Example' do
   use_frameworks!
   
-  pod 'FocusNode'
+  pod 'FocusNode', path: '../'
 end

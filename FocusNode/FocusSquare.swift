@@ -92,7 +92,7 @@ public class FocusSquare: FocusNode {
 			segment.open()
 		}
 		self.positioningNode.addChildNode(fillPlane)
-		self.positioningNode.simdScale = float3(FocusSquare.size * FocusSquare.scaleForClosedSquare)
+		self.positioningNode.simdScale = float3(repeating: FocusSquare.size * FocusSquare.scaleForClosedSquare)
 
 		// Always render focus square on top of other content.
 		self.displayNodeHierarchyOnTop(true)
@@ -136,7 +136,7 @@ public class FocusSquare: FocusNode {
 		SCNTransaction.begin()
 		SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
 		SCNTransaction.animationDuration = FocusSquare.animationDuration / 4
-		positioningNode.simdScale = float3(FocusSquare.size)
+		positioningNode.simdScale = float3(repeating: FocusSquare.size)
 		SCNTransaction.commit()
 	}
 

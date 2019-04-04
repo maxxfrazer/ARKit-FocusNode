@@ -1,5 +1,6 @@
 excluded:
-  - Pods
-variable_name:
+  - Pods/
+  - Example/
+identifier_name:
   min_length:
     warning: 1

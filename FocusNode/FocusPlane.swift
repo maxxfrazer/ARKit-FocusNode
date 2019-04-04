@@ -61,7 +61,7 @@ public class FocusPlane: FocusNode {
 
 		let plane = SCNPlane(width: length, height: length)
 		let node = SCNNode(geometry: plane)
-		node.simdScale = float3(self.size)
+		node.simdScale = float3(repeating: self.size)
 		node.name = "fillPlane"
 		node.opacity = 0.5
 
