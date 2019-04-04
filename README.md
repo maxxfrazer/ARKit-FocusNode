@@ -9,6 +9,9 @@ The root class here uses a class I found in Apple's documentation for ARKit apps
 [![Build Status](https://travis-ci.com/maxxfrazer/ARKit-FocusNode.svg?branch=master)](https://travis-ci.com/maxxfrazer/ARKit-FocusNode)
 
 
+[Medium Article about this CocoaPod](https://medium.com/@maxxfrazer/arkit-pods-focusnode-46343cffe7fe)
+
+
 It was found inside the downloadable project on the following page:
 https://developer.apple.com/documentation/arkit/handling_3d_interaction_and_ui_controls_in_augmented_reality
 
