@@ -32,6 +32,9 @@ class ViewController: UIViewController {
 		super.viewWillAppear(animated)
 
 		let configuration = ARWorldTrackingConfiguration()
+
+		configuration.planeDetection = [.horizontal, .vertical]
+
 		sceneView.session.run(configuration)
 	}
 
