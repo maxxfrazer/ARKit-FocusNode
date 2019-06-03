@@ -1,0 +1,16 @@
+PODS:
+  - SmartHitTest (1.1.1)
+
+DEPENDENCIES:
+  - SmartHitTest
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SmartHitTest
+
+SPEC CHECKSUMS:
+  SmartHitTest: 9091f1c481d6c6e53133aba7e8a09cb3d8db1758
+
+PODFILE CHECKSUM: bb6bfc9b684888a121151187553ba1040a6716f7
+
+COCOAPODS: 1.7.1

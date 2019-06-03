@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name          = "FocusNode"
-  s.version       = "1.2.0"
+  s.version       = "1.2.1"
   s.summary       = "FocusNode creates a node on the ground or wall to show where the centre of the screen hits the active scene."
   s.description   = <<-DESC
   					FocusNode allows users to get a pretty good estimate of a hitTest on vertical or horizontal planes,
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license       = "MIT"
   s.author        = "Max Cobb"
   s.source        = { :git => "https://github.com/maxxfrazer/ARKit-FocusNode.git", :tag => "#{s.version}" }
-  s.platform      = :ios, '12.0'
+  s.platform      = :ios, '11.3'
   s.swift_version = '5.0'
   s.source_files  = "FocusNode/*.swift"
   s.dependency      "SmartHitTest"
