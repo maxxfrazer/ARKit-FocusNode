@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.documentation_url     = 'https://medium.com/@maxxfrazer/arkit-pods-focusnode-46343cffe7fe'
   s.ios.deployment_target = '11.3'
   s.swift_version         = '5.0'
-  s.source_files          = 'FocusNode/*.swift'
+  s.source_files          = 'Sources/FocusNode/*.swift'
   s.dependency              'SmartHitTest'
 end
