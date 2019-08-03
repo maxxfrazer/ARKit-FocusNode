@@ -17,13 +17,19 @@ private extension UIView {
 	}
 }
 
+public protocol ARSmartHitTestSCN: ARSmartHitTest {
+	var session: ARSession { get }
+	var scene: SCNScene { get }
+	var pointOfView: SCNNode? { get }
+}
+
 /**
 An `SCNNode` which is used to provide uses with visual cues about the status of ARKit world tracking.
 - Tag: FocusSquare
 */
 open class FocusNode: SCNNode {
 
-	weak public var viewDelegate: ARSCNView?
+	weak public var viewDelegate: ARSmartHitTestSCN?
 	public var queue = DispatchQueue.main
 
 	// MARK: - Types
@@ -35,7 +41,7 @@ open class FocusNode: SCNNode {
 	// MARK: - Properties
 
 	/// The most recent position of the focus square based on the current state.
-	var lastPosition: float3? {
+	var lastPosition: SIMD3<Float>? {
 		switch state {
 		case .initializing: return nil
 		case .detecting(let hitTestResult, _): return hitTestResult.worldTransform.translation
@@ -82,7 +88,7 @@ open class FocusNode: SCNNode {
 	private(set) var currentPlaneAnchor: ARPlaneAnchor?
 
 	/// The focus square's most recent positions.
-	private var recentFocusNodePositions: [float3] = []
+	private var recentFocusNodePositions: [SIMD3<Float>] = []
 
 	/// The focus square's most recent alignments.
 	private(set) var recentFocusNodeAlignments: [ARPlaneAnchor.Alignment] = []
@@ -96,7 +102,7 @@ open class FocusNode: SCNNode {
 	public var scaleNodeBasedOnDistance = true {
 		didSet {
 			if self.scaleNodeBasedOnDistance == false {
-				self.simdScale = float3([1, 1, 1])
+				self.simdScale = SIMD3<Float>([1, 1, 1])
 			}
 		}
 	}
@@ -143,7 +149,7 @@ open class FocusNode: SCNNode {
 		self.onPlane = false
 		simdTransform = matrix_identity_float4x4
 		eulerAngles.x = .pi / 2
-		simdPosition = float3(0, 0, -0.8)
+		simdPosition = SIMD3<Float>(0, 0, -0.8)
 		unhide()
 		stateChangedSetup()
 	}
@@ -169,17 +175,17 @@ open class FocusNode: SCNNode {
 	// MARK: Helper Methods
 
 	/// Update the transform of the focus square to be aligned with the camera.
-	private func updateTransform(for position: float3, hitTestResult: ARHitTestResult, camera: ARCamera?) {
+	private func updateTransform(for position: SIMD3<Float>, hitTestResult: ARHitTestResult, camera: ARCamera?) {
 		// Average using several most recent positions.
 		recentFocusNodePositions = Array(recentFocusNodePositions.suffix(10))
 
 		// Move to average of recent positions to avoid jitter.
 		let average = recentFocusNodePositions.reduce(
-			float3(repeating: 0), { $0 + $1 }
+			SIMD3<Float>(repeating: 0), { $0 + $1 }
 		) / Float(recentFocusNodePositions.count)
 		self.simdPosition = average
 		if self.scaleNodeBasedOnDistance {
-			self.simdScale = float3(repeating: scaleBasedOnDistance(camera: camera))
+			self.simdScale = SIMD3<Float>(repeating: scaleBasedOnDistance(camera: camera))
 		}
 
 		// Correct y rotation of camera square.
@@ -216,7 +222,7 @@ open class FocusNode: SCNNode {
 
 		var shouldAnimateAlignmentChange = false
 		let tempNode = SCNNode()
-		tempNode.simdRotation = float4(0, 1, 0, angle)
+		tempNode.simdRotation = SIMD4<Float>(0, 1, 0, angle)
 
 		// Determine current alignment
 		var alignment: ARPlaneAnchor.Alignment?
@@ -356,7 +362,7 @@ open class FocusNode: SCNNode {
 		}
 		// Perform hit testing only when ARKit tracking is in a good state.
 		if let camera = view.session.currentFrame?.camera, case .normal = camera.trackingState,
-			let result = view.smartHitTest(view.screenCenter) {
+			let result = view.smartHitTest(view.screenCenter, infinitePlane: false, objectPosition: nil, allowedAlignments: [.horizontal, .vertical]) {
 			queue.async {
 				view.scene.rootNode.addChildNode(self)
 				self.state = .detecting(hitTestResult: result, camera: camera)
@@ -368,5 +374,4 @@ open class FocusNode: SCNNode {
 			}
 		}
 	}
-
 }
