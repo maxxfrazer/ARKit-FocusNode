@@ -17,19 +17,13 @@ private extension UIView {
 	}
 }
 
-public protocol ARSmartHitTestSCN: ARSmartHitTest {
-	var session: ARSession { get }
-	var scene: SCNScene { get }
-	var pointOfView: SCNNode? { get }
-}
-
 /**
 An `SCNNode` which is used to provide uses with visual cues about the status of ARKit world tracking.
 - Tag: FocusSquare
 */
 open class FocusNode: SCNNode {
 
-	weak public var viewDelegate: ARSmartHitTestSCN?
+	weak public var viewDelegate: ARSmartHitTest?
 	public var queue = DispatchQueue.main
 
 	// MARK: - Types
@@ -357,7 +351,7 @@ open class FocusNode: SCNNode {
 	}
 
 	public func updateFocusNode() {
-		guard let view = self.viewDelegate else {
+		guard let view = self.viewDelegate as? (ARSCNView & ARSmartHitTest) else {
 			return
 		}
 		// Perform hit testing only when ARKit tracking is in a good state.
