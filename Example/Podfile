@@ -1,9 +1,0 @@
-project 'FocusNode+Example.xcodeproj'
-
-platform :ios, '11.3'
-
-target 'FocusNode+Example' do
-  use_frameworks!
-
-  pod 'FocusNode', path: '../'
-end

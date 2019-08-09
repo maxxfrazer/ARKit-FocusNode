@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		00A3A7CD21CFF9BC002A7CF6 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3A7CC21CFF9BC002A7CF6 /* ViewController+ARSCNViewDelegate.swift */; };
 		00A3A7CF21CFF9BC002A7CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A3A7CE21CFF9BC002A7CF6 /* Assets.xcassets */; };
 		00A3A7D221CFF9BC002A7CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A3A7D021CFF9BC002A7CF6 /* LaunchScreen.storyboard */; };
-		3A3EDB70AC8169E53DD5281A /* Pods_FocusNode_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F246411EB0A1748471BD1E /* Pods_FocusNode_Example.framework */; };
+		F387A09822FDCFAB00C186D6 /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = F387A09722FDCFAB00C186D6 /* FocusNode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +23,7 @@
 		00A3A7CE21CFF9BC002A7CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00A3A7D121CFF9BC002A7CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00A3A7D321CFF9BC002A7CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B764140AD75DF3AD34B84C1 /* Pods-FocusNode+Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusNode+Example.debug.xcconfig"; path = "Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example.debug.xcconfig"; sourceTree = "<group>"; };
 		62F246411EB0A1748471BD1E /* Pods_FocusNode_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusNode_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA16218AE51D8D077B46BAB4 /* Pods-FocusNode+Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusNode+Example.release.xcconfig"; path = "Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3EDB70AC8169E53DD5281A /* Pods_FocusNode_Example.framework in Frameworks */,
+				F387A09822FDCFAB00C186D6 /* FocusNode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +43,6 @@
 			children = (
 				00A3A7C521CFF9BC002A7CF6 /* FocusNode+Example */,
 				00A3A7C421CFF9BC002A7CF6 /* Products */,
-				FD59A35D216B6659801DBDF4 /* Pods */,
 				FE9223BCF606C8396987DC77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -71,15 +68,6 @@
 			path = "FocusNode+Example";
 			sourceTree = "<group>";
 		};
-		FD59A35D216B6659801DBDF4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5B764140AD75DF3AD34B84C1 /* Pods-FocusNode+Example.debug.xcconfig */,
-				BA16218AE51D8D077B46BAB4 /* Pods-FocusNode+Example.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FE9223BCF606C8396987DC77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,17 +83,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00A3A7D621CFF9BC002A7CF6 /* Build configuration list for PBXNativeTarget "FocusNode+Example" */;
 			buildPhases = (
-				90A31EC219C23315701C5CF5 /* [CP] Check Pods Manifest.lock */,
 				00A3A7BF21CFF9BC002A7CF6 /* Sources */,
 				00A3A7C021CFF9BC002A7CF6 /* Frameworks */,
 				00A3A7C121CFF9BC002A7CF6 /* Resources */,
-				B801D4E9919B8845BDDB559C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "FocusNode+Example";
+			packageProductDependencies = (
+				F387A09722FDCFAB00C186D6 /* FocusNode */,
+			);
 			productName = "FocusNode+Example";
 			productReference = 00A3A7C321CFF9BC002A7CF6 /* FocusNode+Example.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 00A3A7BA21CFF9BC002A7CF6;
+			packageReferences = (
+				F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */,
+			);
 			productRefGroup = 00A3A7C421CFF9BC002A7CF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,48 +147,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		90A31EC219C23315701C5CF5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FocusNode+Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B801D4E9919B8845BDDB559C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FocusNode+Example/Pods-FocusNode+Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00A3A7BF21CFF9BC002A7CF6 /* Sources */ = {
@@ -341,11 +291,10 @@
 		};
 		00A3A7D721CFF9BC002A7CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B764140AD75DF3AD34B84C1 /* Pods-FocusNode+Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N2RTJDRM64;
 				INFOPLIST_FILE = "FocusNode+Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,11 +309,10 @@
 		};
 		00A3A7D821CFF9BC002A7CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA16218AE51D8D077B46BAB4 /* Pods-FocusNode+Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N2RTJDRM64;
 				INFOPLIST_FILE = "FocusNode+Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file://../";
+			requirement = {
+				branch = feature/spm;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F387A09722FDCFAB00C186D6 /* FocusNode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */;
+			productName = FocusNode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00A3A7BB21CFF9BC002A7CF6 /* Project object */;
 }

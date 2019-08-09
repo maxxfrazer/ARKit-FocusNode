@@ -9,6 +9,8 @@
 import ARKit
 import FocusNode
 
+extension ARSCNView: ARSmartHitTestSCN {}
+
 class ViewController: UIViewController {
 
 	var sceneView = ARSCNView(frame: .zero)

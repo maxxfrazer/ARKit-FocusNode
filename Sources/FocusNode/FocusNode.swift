@@ -362,7 +362,7 @@ open class FocusNode: SCNNode {
 		}
 		// Perform hit testing only when ARKit tracking is in a good state.
 		if let camera = view.session.currentFrame?.camera, case .normal = camera.trackingState,
-			let result = view.smartHitTest(view.screenCenter, infinitePlane: false, objectPosition: nil, allowedAlignments: [.horizontal, .vertical]) {
+			let result = view.smartHitTest(view.screenCenter) {
 			queue.async {
 				view.scene.rootNode.addChildNode(self)
 				self.state = .detecting(hitTestResult: result, camera: camera)
