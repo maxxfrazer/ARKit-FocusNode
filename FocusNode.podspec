@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name                  = 'FocusNode'
-  s.version               = '1.2.1'
+  s.version               = '2.0.0'
   s.license               = 'MIT'
   s.summary               = 'FocusNode creates a node on the ground or wall to show where the centre of the screen hits the active scene.'
   s.social_media_url      = 'http://twitter.com/maxxfrazer'
@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.3'
   s.swift_version         = '5.0'
   s.source_files          = 'Sources/FocusNode/*.swift'
-  s.dependency              'SmartHitTest'
+  s.dependency              'SmartHitTest', '~> 2.0'
 end

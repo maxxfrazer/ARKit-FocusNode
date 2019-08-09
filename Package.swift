@@ -7,24 +7,16 @@ let package = Package(
   name: "FocusNode",
   platforms: [.iOS("11.3")],
   products: [
-    // Products define the executables and libraries produced by a package, and make them visible to other packages.
     .library(
       name: "FocusNode",
       targets: ["FocusNode"]),
   ],
   dependencies: [
-    // Dependencies declare other packages that this package depends on.
-    // .package(url: /* package url */, from: "1.0.0")
-    // https://github.com/maxxfrazer/ARKit-SmartHitTest
+//  .package(path: "../ARKit-SmartHitTest")
     .package(url: "https://github.com/maxxfrazer/ARKit-SmartHitTest", .branch("feature/spm"))
   ],
   targets: [
-    // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-    // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-    .target(
-      name: "FocusNode",
-      dependencies: ["SmartHitTest"]
-    )
+    .target(name: "FocusNode", dependencies: ["SmartHitTest"])
   ],
   swiftLanguageVersions: [.v5]
 )
