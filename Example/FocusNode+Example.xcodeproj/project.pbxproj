@@ -12,7 +12,7 @@
 		00A3A7CD21CFF9BC002A7CF6 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3A7CC21CFF9BC002A7CF6 /* ViewController+ARSCNViewDelegate.swift */; };
 		00A3A7CF21CFF9BC002A7CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A3A7CE21CFF9BC002A7CF6 /* Assets.xcassets */; };
 		00A3A7D221CFF9BC002A7CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A3A7D021CFF9BC002A7CF6 /* LaunchScreen.storyboard */; };
-		F387A09822FDCFAB00C186D6 /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = F387A09722FDCFAB00C186D6 /* FocusNode */; };
+		F387A09B22FDD25700C186D6 /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = F387A09A22FDD25700C186D6 /* FocusNode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F387A09822FDCFAB00C186D6 /* FocusNode in Frameworks */,
+				F387A09B22FDD25700C186D6 /* FocusNode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 			);
 			name = "FocusNode+Example";
 			packageProductDependencies = (
-				F387A09722FDCFAB00C186D6 /* FocusNode */,
+				F387A09A22FDD25700C186D6 /* FocusNode */,
 			);
 			productName = "FocusNode+Example";
 			productReference = 00A3A7C321CFF9BC002A7CF6 /* FocusNode+Example.app */;
@@ -125,7 +125,7 @@
 			);
 			mainGroup = 00A3A7BA21CFF9BC002A7CF6;
 			packageReferences = (
-				F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */,
+				F387A09922FDD25700C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */,
 			);
 			productRefGroup = 00A3A7C421CFF9BC002A7CF6 /* Products */;
 			projectDirPath = "";
@@ -349,7 +349,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */ = {
+		F387A09922FDD25700C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "file://../";
 			requirement = {
@@ -360,9 +360,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F387A09722FDCFAB00C186D6 /* FocusNode */ = {
+		F387A09A22FDD25700C186D6 /* FocusNode */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F387A09622FDCFAB00C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */;
+			package = F387A09922FDD25700C186D6 /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */;
 			productName = FocusNode;
 		};
 /* End XCSwiftPackageProductDependency section */
