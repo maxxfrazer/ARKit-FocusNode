@@ -7,13 +7,14 @@ let package = Package(
   name: "FocusNode",
   platforms: [.iOS("11.3")],
   products: [
-    .library(
-      name: "FocusNode",
-      targets: ["FocusNode"]),
+    .library(name: "FocusNode", targets: ["FocusNode"]),
   ],
   dependencies: [
 //  .package(path: "../ARKit-SmartHitTest")
-    .package(url: "https://github.com/maxxfrazer/ARKit-SmartHitTest", .branch("feature/spm"))
+    .package(
+      url: "https://github.com/maxxfrazer/ARKit-SmartHitTest",
+      .upToNextMajor(from: "2.0.0")
+    )
   ],
   targets: [
     .target(name: "FocusNode", dependencies: ["SmartHitTest"])
