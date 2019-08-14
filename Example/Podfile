@@ -6,4 +6,5 @@ target 'FocusNode+Example' do
   use_frameworks!
 
   pod 'FocusNode', path: '../'
+  # pod 'SmartHitTest', path: '../../ARKit-SmartHitTest'
 end

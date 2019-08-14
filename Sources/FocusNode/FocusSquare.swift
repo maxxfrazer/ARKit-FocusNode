@@ -78,21 +78,21 @@ public class FocusSquare: FocusNode {
 
 		let sl: Float = 0.5  // segment length
 		let c: Float = FocusSquare.thickness / 2 // correction to align lines perfectly
-		s1.simdPosition += float3(-(sl / 2 - c), -(sl - c), 0)
-		s2.simdPosition += float3(sl / 2 - c, -(sl - c), 0)
-		s3.simdPosition += float3(-sl, -sl / 2, 0)
-		s4.simdPosition += float3(sl, -sl / 2, 0)
-		s5.simdPosition += float3(-sl, sl / 2, 0)
-		s6.simdPosition += float3(sl, sl / 2, 0)
-		s7.simdPosition += float3(-(sl / 2 - c), sl - c, 0)
-		s8.simdPosition += float3(sl / 2 - c, sl - c, 0)
+		s1.simdPosition += SIMD3<Float>(-(sl / 2 - c), -(sl - c), 0)
+		s2.simdPosition += SIMD3<Float>(sl / 2 - c, -(sl - c), 0)
+		s3.simdPosition += SIMD3<Float>(-sl, -sl / 2, 0)
+		s4.simdPosition += SIMD3<Float>(sl, -sl / 2, 0)
+		s5.simdPosition += SIMD3<Float>(-sl, sl / 2, 0)
+		s6.simdPosition += SIMD3<Float>(sl, sl / 2, 0)
+		s7.simdPosition += SIMD3<Float>(-(sl / 2 - c), sl - c, 0)
+		s8.simdPosition += SIMD3<Float>(sl / 2 - c, sl - c, 0)
 
 		for segment in segments {
 			self.positioningNode.addChildNode(segment)
 			segment.open()
 		}
 		self.positioningNode.addChildNode(fillPlane)
-		self.positioningNode.simdScale = float3(repeating: FocusSquare.size * FocusSquare.scaleForClosedSquare)
+		self.positioningNode.simdScale = SIMD3<Float>(repeating: FocusSquare.size * FocusSquare.scaleForClosedSquare)
 
 		// Always render focus square on top of other content.
 		self.displayNodeHierarchyOnTop(true)
@@ -136,7 +136,7 @@ public class FocusSquare: FocusNode {
 		SCNTransaction.begin()
 		SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
 		SCNTransaction.animationDuration = FocusSquare.animationDuration / 4
-		positioningNode.simdScale = float3(repeating: FocusSquare.size)
+		positioningNode.simdScale = SIMD3<Float>(repeating: FocusSquare.size)
 		SCNTransaction.commit()
 	}
 

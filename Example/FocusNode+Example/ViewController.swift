@@ -8,6 +8,9 @@
 
 import ARKit
 import FocusNode
+import SmartHitTest
+
+extension ARSCNView: ARSmartHitTest {}
 
 class ViewController: UIViewController {
 
