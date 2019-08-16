@@ -24,13 +24,14 @@ An `SCNNode` which is used to provide uses with visual cues about the status of 
 open class FocusNode: SCNNode {
 
 	weak public var viewDelegate: ARSmartHitTest?
-	public var queue = DispatchQueue.main
 
 	// MARK: - Types
 	public enum State: Equatable {
 		case initializing
 		case detecting(hitTestResult: ARHitTestResult, camera: ARCamera?)
 	}
+
+	var screenCenter: CGPoint?
 
 	// MARK: - Properties
 
@@ -352,21 +353,33 @@ open class FocusNode: SCNNode {
 
 	public func updateFocusNode() {
 		guard let view = self.viewDelegate as? (ARSCNView & ARSmartHitTest) else {
-      print("FocusNode viewDelegate must be an ARSCNView for now")
+			print("FocusNode viewDelegate must be an ARSCNView for now")
 			return
 		}
 		// Perform hit testing only when ARKit tracking is in a good state.
-		if let camera = view.session.currentFrame?.camera, case .normal = camera.trackingState,
-			let result = view.smartHitTest(view.screenCenter, infinitePlane: false, objectPosition: nil, allowedAlignments: [.horizontal, .vertical]) {
-			queue.async {
-				view.scene.rootNode.addChildNode(self)
-				self.state = .detecting(hitTestResult: result, camera: camera)
-			}
-		} else {
-			queue.async {
+		guard let camera = view.session.currentFrame?.camera, case .normal = camera.trackingState else {
 				self.state = .initializing
 				view.pointOfView?.addChildNode(self)
+			return
+		}
+		var result: ARHitTestResult?
+		if !Thread.isMainThread {
+			if let center = self.screenCenter {
+				result = view.smartHitTest(center)
+			} else {
+				DispatchQueue.main.async {
+					self.screenCenter = view.screenCenter
+					self.updateFocusNode()
+				}
+				return
 			}
+		} else {
+			result = view.smartHitTest(view.screenCenter)
+		}
+
+		if let result = result {
+				view.scene.rootNode.addChildNode(self)
+				self.state = .detecting(hitTestResult: result, camera: camera)
 		}
 	}
 }
