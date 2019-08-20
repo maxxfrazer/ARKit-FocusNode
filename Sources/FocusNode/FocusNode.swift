@@ -380,6 +380,9 @@ open class FocusNode: SCNNode {
 		if let result = result {
 				view.scene.rootNode.addChildNode(self)
 				self.state = .detecting(hitTestResult: result, camera: camera)
+		} else {
+				self.state = .initializing
+				view.pointOfView?.addChildNode(self)
 		}
 	}
 }
