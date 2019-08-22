@@ -10,8 +10,6 @@ import ARKit
 
 extension ViewController: ARSCNViewDelegate {
 	func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-		DispatchQueue.main.async {
-			self.focusNode.updateFocusNode()
-		}
+		self.focusNode.updateFocusNode()
 	}
 }
