@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name                  = 'FocusNode'
-  s.version               = '2.0.0'
+  s.version               = '2.0.2'
   s.license               = 'MIT'
   s.summary               = 'FocusNode creates a node on the ground or wall to show where the centre of the screen hits the active scene.'
   s.social_media_url      = 'http://twitter.com/maxxfrazer'
