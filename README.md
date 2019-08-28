@@ -2,12 +2,12 @@
 
 The root class here uses a class I found in Apple's documentation for ARKit apps that I wanted to have easy to use myself, and thought others would benefit from it too.
 
+[![Actions Status](https://github.com/maxxfrazer/ARKit-FocusNode/workflows/build/badge.svg)](https://github.com/maxxfrazer/ARKit-FocusNode/actions)
 [![Version](https://img.shields.io/cocoapods/v/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
 [![License](https://img.shields.io/cocoapods/l/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
 [![Platform](https://img.shields.io/cocoapods/p/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-v2.0.2-orange.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
-[![Actions Status](https://github.com/maxxfrazer/ARKit-FocusNode/workflows/CI/badge.svg)](https://github.com/maxxfrazer/ARKit-FocusNode/actions)
 
 ![FocusNode Example 1](https://github.com/maxxfrazer/ARKit-FocusNode/blob/master/media/FocusNode-Example1.gif)
 
