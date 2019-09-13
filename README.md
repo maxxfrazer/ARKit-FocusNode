@@ -6,7 +6,7 @@ The root class here uses a class I found in Apple's documentation for ARKit apps
 [![Version](https://img.shields.io/cocoapods/v/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
 [![License](https://img.shields.io/cocoapods/l/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
 [![Platform](https://img.shields.io/cocoapods/p/FocusNode.svg)](https://cocoapods.org/pods/FocusNode)
-[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-v2.0.2-orange.svg?style=flat)](https://github.com/apple/swift-package-manager)
+[![Swift Package Manager](https://img.shields.io/badge/SwiftPM_📦-v2.0.2-orange.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 
 ![FocusNode Example 1](https://github.com/maxxfrazer/ARKit-FocusNode/blob/master/media/FocusNode-Example1.gif)
@@ -20,6 +20,8 @@ It was found inside the downloadable project on the following page:
 https://developer.apple.com/documentation/arkit/handling_3d_interaction_and_ui_controls_in_augmented_reality
 
 I've added the license from that project to this repository.
+
+For a similar object to place into a RealityKit scene, try the [FocusEntity Repository](https://github.com/maxxfrazer/FocusEntity).
 
 ## Minimum Requirements
   - Swift 5.0
